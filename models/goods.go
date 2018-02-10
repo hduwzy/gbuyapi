@@ -8,8 +8,8 @@ type Goods struct {
 	Title      string    `orm:";column(title);size(256)" json:"title"`
 	CateId     int       `orm:";column(cate_id);default(0)" json:"cate_id"`
 	Detail     string    `orm:";column(detail);default('');type(text)" json:"detail"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *Goods) TableName() string {
@@ -23,8 +23,8 @@ type Sku struct {
 	Price      int       `orm:";column(price);default(0)" json:"price"`
 	Unit       string    `orm:";column(unit);size(32)" json:"unit"`
 	Stock      int       `orm:";column(stock);default(0)" json:"stock"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *Sku) TableName() string {
@@ -37,8 +37,8 @@ type SkuImage struct {
 	SkuId      int       `orm:";column(sku_id)" json:"sku_id"`
 	Url        string    `orm:";column(url);size(128)" json:"url"`
 	IsDelete   int8      `orm:";column(is_delete);default(0)" json:"is_delete"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *SkuImage) TableName() string {

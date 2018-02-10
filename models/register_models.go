@@ -7,8 +7,11 @@ func init() {
 		// 商品
 		&Goods{},&Sku{},
 		// 订单
+		&Orders{}, &SubOrders{},
 		// 团购
+		&Groupbuy{}, &GroupbuyDetail{}, &GroupbuyPartake{},
 		// 用户
+		&UserAddress{},
 	}
 	orm.RegisterModel(models...)
 }

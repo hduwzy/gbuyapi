@@ -4,6 +4,7 @@ import (
 	_ "gbuyapi/routers"
 
 	"github.com/astaxie/beego"
+	"gbuyapi/util"
 )
 
 func main() {
@@ -11,5 +12,7 @@ func main() {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
+
+	util.InitDb()
 	beego.Run()
 }

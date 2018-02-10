@@ -10,10 +10,10 @@ type Groupbuy struct {
 	UserId      int       `orm:";column(user_id)" json:"user_id"`
 	ReceiveType int8      `orm:";column(receive_type)" json:"receive_type"`
 	IsVisible   int8      `orm:";column(is_visible)" json:"is_visible"`
-	StartTime   time.Time `orm:";column(start_time);default(current_timestamp())" json:"start_time"`
-	EndTime     time.Time `orm:";column(end_time);default(current_timestamp())" json:"end_time"`
-	CreateTime  time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime  time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	StartTime   time.Time `orm:";column(start_time);" json:"start_time"`
+	EndTime     time.Time `orm:";column(end_time);" json:"end_time"`
+	CreateTime  time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime  time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *Groupbuy) TableName() string {
@@ -27,8 +27,8 @@ type GroupbuyDetail struct {
 	SkuId      int       `orm:";column(sku_id)" json:"sku_id"`
 	Price      int       `orm:";column(price)" json:"price"`
 	Amount     int       `orm:";column(amount)" json:"amount"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *GroupbuyDetail) TableName() string {
@@ -38,7 +38,7 @@ func (this *GroupbuyDetail) TableName() string {
 type GroupbuyPartake struct {
 	Id         int       `orm:"auto;pk;column(id)" json:"id"`
 	GroupbuyId int       `orm:";column(groupbuy_id)" json:"groupbuy_id"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
 }
 
 func (this *GroupbuyPartake) TableName() string {

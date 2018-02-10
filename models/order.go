@@ -12,8 +12,8 @@ type Orders struct {
 	DeliverType int8      `orm:";column(deliver_type);default(0)" json:"deliver_type"`
 	AddressId   int       `orm:";column(address_id)" json:"address_id"`
 	BuyerRemark string    `orm:";column(buyer_remark);default('');size(256)" json:"buyer_remark"`
-	CreateTime  time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime  time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime  time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime  time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *Orders) TableName() string {
@@ -29,8 +29,8 @@ type SubOrders struct {
 	Amount     int       `orm:";column(amount);default(0)" json:"amount"`
 	Price      int       `orm:";column(price);default(0)" json:"price"`
 	TotalPrice int       `orm:";column(total_price);default(0)" json:"total_price"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
 }
 
 func (this *SubOrders) TableName() string {
