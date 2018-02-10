@@ -8,8 +8,8 @@ type Goods struct {
 	Title      string    `orm:";column(title);size(256)" json:"title"`
 	CateId     int       `orm:";column(cate_id);default(0)" json:"cate_id"`
 	Detail     string    `orm:";column(detail);default('');type(text)" json:"detail"`
-	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
-	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"update_time"`
+	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"-"`
+	UpdateTime time.Time `orm:";auto_now;column(update_time);" json:"-"`
 }
 
 func (this *Goods) TableName() string {

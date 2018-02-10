@@ -25,6 +25,21 @@ func init() {
 				&controllers.UserAddressController{},
 			),
 		),
+		beego.NSNamespace("/order",
+			beego.NSInclude(
+				&controllers.OrderController{},
+			),
+		),
+		beego.NSNamespace("/goods",
+			beego.NSInclude(
+				&controllers.GoodsController{},
+			),
+		),
+		beego.NSNamespace("/groupbuy",
+			beego.NSInclude(
+				&controllers.GroupbuyController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }
