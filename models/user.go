@@ -1,86 +1,20 @@
 package models
 
-import (
-	"errors"
-	"strconv"
-	"time"
-)
+import "time"
 
-var (
-	UserList map[string]*User
-)
-
-func init() {
-	UserList = make(map[string]*User)
-	u := User{"user_11111", "astaxie", "11111", Profile{"male", 20, "Singapore", "astaxie@gmail.com"}}
-	UserList["user_11111"] = &u
+type UserAddress struct {
+	Id           int       `orm:"auto;pk;column(id)" json:"id"` //自增id
+	ReceiveName  string    `orm:";column(receive_name);size(128)" json:"receive_name"`
+	ReceivePhone string    `orm:";column(receive_phone);size(32)" json:"receive_phone"`
+	Province     string    `orm:";column(province);size(32)" json:"province"`
+	City         string    `orm:";column(city);size(32)" json:"city"`
+	Area         string    `orm:";column(area);size(32)" json:"area"`
+	Street       string    `orm:";column(street);size(128)" json:"street"`
+	Detail       string    `orm:";column(detail);size(256)" json:"detail"`
+	CreateTime   time.Time `orm:";auto_now_add;column(create_time);default(current_timestamp())" json:"create_time"`
+	UpdateTime   time.Time `orm:";auto_now;column(update_time);default(current_timestamp())" json:"update_time"`
 }
 
-type User struct {
-	Id       string
-	Username string
-	Password string
-	Profile  Profile
-}
-
-type Profile struct {
-	Gender  string
-	Age     int
-	Address string
-	Email   string
-}
-
-func AddUser(u User) string {
-	u.Id = "user_" + strconv.FormatInt(time.Now().UnixNano(), 10)
-	UserList[u.Id] = &u
-	return u.Id
-}
-
-func GetUser(uid string) (u *User, err error) {
-	if u, ok := UserList[uid]; ok {
-		return u, nil
-	}
-	return nil, errors.New("User not exists")
-}
-
-func GetAllUsers() map[string]*User {
-	return UserList
-}
-
-func UpdateUser(uid string, uu *User) (a *User, err error) {
-	if u, ok := UserList[uid]; ok {
-		if uu.Username != "" {
-			u.Username = uu.Username
-		}
-		if uu.Password != "" {
-			u.Password = uu.Password
-		}
-		if uu.Profile.Age != 0 {
-			u.Profile.Age = uu.Profile.Age
-		}
-		if uu.Profile.Address != "" {
-			u.Profile.Address = uu.Profile.Address
-		}
-		if uu.Profile.Gender != "" {
-			u.Profile.Gender = uu.Profile.Gender
-		}
-		if uu.Profile.Email != "" {
-			u.Profile.Email = uu.Profile.Email
-		}
-		return u, nil
-	}
-	return nil, errors.New("User Not Exist")
-}
-
-func Login(username, password string) bool {
-	for _, u := range UserList {
-		if u.Username == username && u.Password == password {
-			return true
-		}
-	}
-	return false
-}
-
-func DeleteUser(uid string) {
-	delete(UserList, uid)
+func (this *UserAddress) TableName() string {
+	return "user_address"
 }
