@@ -6,6 +6,6 @@ if [ -f .pid ]; then
 fi
 
 glide up
-nohup bee run -downdoc=true -gendoc=true >/dev/null 2>&1 &
+bee run -downdoc=true -gendoc=true
 echo $! > .pid
 exit
