@@ -34,7 +34,7 @@ func (this *OrderController) GetOrderByOrderId() {
 // @Param	page	query	int	true	"当前页数"
 // @Param	page_size	query	int	true	"每页展示条数"
 // @Param	user_id	query	int	true	"用户ID"
-// @Success 200 {object} result.GetOrderListResult
+// @Success 200 {object} results.GetOrderListResult
 // @Failure 210 请求出错
 // @router / [get]
 func (this *OrderController) GetOrderList() {
