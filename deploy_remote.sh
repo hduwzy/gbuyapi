@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ~/.bashrc
+source /root/.bashrc
 cd $GOPATH/src/gbuyapi
 if [ -f .pid ]; then
     cat .pid | xargs kill
