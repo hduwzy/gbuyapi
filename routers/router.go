@@ -1,7 +1,7 @@
 // @APIVersion 1.0
 // @Title 团购接龙-接口文档
 // @Description 团购接龙-接口文档
-// @Contact hduwzy@163.com chenhongluan@sina.com
+// @Contact hduwzy@163.com,chenhongluan@sina.com
 // @TermsOfServiceUrl http://testonly.fun/
 // @License Apache 2.0
 // @LicenseUrl http://www.apache.org/licenses/LICENSE-2.0.html
