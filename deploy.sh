@@ -11,6 +11,6 @@ ssh root@testonly.fun >/dev/null 2>&1 << eeooff
     fi
     git pull origin master
     glide up
-    bee run -downdoc=true -gendoc=true
+    nohup bee run -downdoc=true -gendoc=true >/dev/null 2>&1
     echo $! > .pid
 eeooff
