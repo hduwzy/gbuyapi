@@ -40,11 +40,11 @@ func (this *GroupbuyController) GetGroupbuy() {
 
 // @Title UpdateGroupbuy
 // @Description 更新团购信息
-// @Param	group_id	path	int	true	"团购id"
+// @Param	gid	path	int	true	"团购id"
 // @Param	body	body	models.Groupbuy	true	"团购信息"
 // @Success 200 {object} models.Groupbuy
 // @Failure 210 {object} util.ApiError 请求失败
-// @router / [put]
+// @router /:gid [put]
 func (this *GroupbuyController) UpdateGroupbuy() {
 
 }
