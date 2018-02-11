@@ -3,7 +3,10 @@ package util
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	_ "github.com/go-sql-driver/mysql"
+	"fmt"
 )
+
 
 
 //dbhost="testonly.fun"
@@ -18,6 +21,7 @@ func InitDb() {
 	dbname := beego.AppConfig.String("dbname")
 
 	url := username + ":" + password + "@tcp(" + dbhost + ":" + port + ")/" + dbname + "?charset=utf8&parseTime=true&loc=Local"
+	fmt.Println(url)
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	orm.RegisterDataBase("default", "mysql", url, 3, 10)
 }

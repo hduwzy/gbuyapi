@@ -1,18 +1,21 @@
 package services
 
-import . "gbuyapi/models"
+import (
+	. "gbuyapi/models"
+	"gbuyapi/util"
+)
 
 type GoodsService struct {
 	BaseService
 }
 
-func (s *GoodsService) GetGoodsById(goods_id int) (goods Goods, code int) {
+func (s *GoodsService) GetGoodsById(goods_id int) (goods *Goods) {
 	qs := s.Orm().QueryTable("goods")
-
-	err := qs.Filter("goods_id__eq", goods_id).One(&goods)
-	if err != nil {
-		return goods, 210
+	goods = new(Goods)
+	errors := qs.Filter("id__eq", goods_id).One(goods)
+	if errors != nil {
+		panic(util.NewError(util.GOODS_NOT_EXISTS))
 	}
 
-	return goods, 200
+	return goods
 }
