@@ -35,7 +35,11 @@ func (this *GoodsController) GetGoods() {
 // @Failure 21002 商品信息不全
 // @router / [post]
 func (this *GoodsController) AddGoods() {
+	this.Data["json"] = map[string]interface{} {
+		"goods_id" : 1,
+	}
 
+	this.ServeJSON()
 }
 
 // @Title UpdateGoods
