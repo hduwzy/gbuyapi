@@ -23,7 +23,7 @@ func (this *OrderController) CreateOrder() {
 // @Param	order_id	path	string	true	"订单ID"
 // @Success 200 {object} models.Orders
 // @Failure 210 请求出错
-// @router / [get]
+// @router /:order_id [get]
 func (this *OrderController) GetOrderByOrderId() {
 
 }
