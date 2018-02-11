@@ -7,6 +7,5 @@ git push origin master
 ssh root@testonly.fun << eeooff
     cd /root/go/src/gbuyapi
     git pull origin master
+    ./deploy_remote.sh
 eeooff
-
-ssh root@testonly.fun "./deploy_remote.sh"
