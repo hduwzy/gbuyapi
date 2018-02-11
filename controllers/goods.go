@@ -23,6 +23,7 @@ func (this *GoodsController) GetGoods() {
 	goods_id := ParamInt(this.Ctx, ":goods_id")
 	s := GoodsService{}
 	goods := s.GetGoodsById(goods_id)
+	goods.Id=100001
 	this.Data["json"] = goods
 	this.ServeJSON()
 }
