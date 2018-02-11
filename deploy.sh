@@ -5,7 +5,7 @@ git commit -m"auto commit"
 git push origin master
 
 ssh root@testonly.fun << eeooff
-cd $GOPATH/src/gbuyapi
+cd /root/go/src/gbuyapi
 if [ -f ".pid" ]; then
     cat .pid | xargs kill -9
 fi
