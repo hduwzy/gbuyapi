@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export GOPATH="/root/go"
+source ~/.bashrc
 cd $GOPATH/src/gbuyapi
 if [ -f .pid ]; then
     cat .pid | xargs kill
