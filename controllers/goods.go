@@ -37,6 +37,7 @@ func (this *GoodsController) GetGoods() {
 func (this *GoodsController) AddGoods() {
 	this.Data["json"] = map[string]interface{} {
 		"goods_id" : 1,
+		"msg" : 100,
 	}
 
 	this.ServeJSON()
