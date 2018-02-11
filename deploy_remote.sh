@@ -5,6 +5,9 @@ export PATH="$PATH:/root/go/bin"
 cd $GOPATH/src/gbuyapi
 if [ -f .pid ]; then
     cat .pid | xargs kill
+    for id in $(pidof gbuyapi); do
+        kill $id
+    done
 fi
 
 #glide up
