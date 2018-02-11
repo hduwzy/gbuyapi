@@ -1,6 +1,9 @@
 package controllers
 
-import "github.com/astaxie/beego"
+import (
+	"github.com/astaxie/beego"
+	"gbuyapi/util"
+)
 
 type GroupbuyController struct {
 	beego.Controller
@@ -45,7 +48,7 @@ func (this *GroupbuyController) GetGroupbuy() {
 // @Param	group_id	path	int	true	"团购id"
 // @Param	body	body	models.Groupbuy	true	"团购信息"
 // @Success 200 {object} models.Groupbuy
-// @Failure 210 请求失败
+// @Failure 210 {object} util.ApiError 请求失败
 // @router / [put]
 func (this *GroupbuyController) UpdateGroupbuy() {
 
