@@ -46,7 +46,7 @@ func (this *GroupbuyController) GetGroupbuy() {
 // @Param	body	body	models.Groupbuy	true	"团购信息"
 // @Success 200 {object} models.Groupbuy
 // @Failure 210 请求失败
-// @router / [post]
+// @router / [put]
 func (this *GroupbuyController) UpdateGroupbuy() {
 
 }
