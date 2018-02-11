@@ -34,7 +34,7 @@ func (this *GroupbuyController) DeleteGroupbuy() {
 // @Param	group_id	path	int	true	"团购id"
 // @Success 200 {object} models.Groupbuy
 // @Failure 210 请求失败
-// @router /:gid [post]
+// @router /:gid [get]
 func (this *GroupbuyController) GetGroupbuy() {
 
 }
