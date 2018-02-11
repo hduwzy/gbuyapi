@@ -5,6 +5,9 @@ git commit -m"auto commit"
 git push origin master
 
 ssh root@testonly.fun >/dev/null 2>&1 << eeooff
-
-echo $! > .pid
+cd "/root/go/src/gbuyapi" && \
+if [ -f .pid ]; then \
+    cat .pid | xargs kill -9 \
+fi && \
+echo 111112222 > .pid
 eeooff
