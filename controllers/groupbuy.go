@@ -54,7 +54,7 @@ func (this *GroupbuyController) UpdateGroupbuy() {
 
 // @Title BindGroupbuyGoods
 // @Description 绑定团购商品
-// @Param	group_id	path	int	true	"团购id"
+// @Param	gid	path	int	true	"团购id"
 // @Param	body	body	params.BindGroupbuyGoodsRequest	true	"绑定信息"
 // @Success 200
 // @Failure 210 请求失败
