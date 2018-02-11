@@ -40,3 +40,15 @@ func (this *OrderController) GetOrderByOrderId() {
 func (this *OrderController) GetOrderList() {
 
 }
+
+
+// @Title CancelOrder
+// @Description 更新订单状态
+// @Param	order_id	path	string	true	"订单id"
+// @Param	status	path	int	true	"订单状态"
+// @Success 200 {object} models.Orders
+// @Failure 210 请求出错
+// @router /:order_id/status/:status [put]
+func (this *OrderController) CancelOrder() {
+
+}
