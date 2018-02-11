@@ -19,7 +19,6 @@ type GoodsController struct {
 // @router /:goods_id [get]
 func (this *GoodsController) GetGoods() {
 	defer ErrHandle(this.Ctx)
-	panic(ApiError{})
 	goods_id := ParamInt(this.Ctx, ":goods_id")
 	s := GoodsService{}
 	goods := s.GetGoodsById(goods_id)
