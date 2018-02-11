@@ -16,3 +16,27 @@ type OrderController struct {
 func (this *OrderController) CreateOrder() {
 
 }
+
+
+// @Title GetOrderByOrderId
+// @Description 获取单个订单详情
+// @Param	order_id	path	string	true	"订单ID"
+// @Success 200 {object} models.Orders
+// @Failure 210 请求出错
+// @router / [get]
+func (this *OrderController) GetOrderByOrderId() {
+
+}
+
+
+// @Title GetOrderList
+// @Description 获取订单列表
+// @Param	page	query	int	true	"当前页数"
+// @Param	page_size	query	int	true	"每页展示条数"
+// @Param	user_id	query	int	true	"用户ID"
+// @Success 200 {object} result.GetOrderListResult
+// @Failure 210 请求出错
+// @router / [get]
+func (this *OrderController) GetOrderList() {
+
+}
