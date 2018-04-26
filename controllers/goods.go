@@ -45,11 +45,12 @@ func (this *GoodsController) AddGoods() {
 
 // @Title UpdateGoods
 // @Description 更新商品信息
+// @Param	goods_id	path	int	true	"商品ID"
 // @Param	body	body	models.Goods	true	"商品信息"
 // @Success 200 {object} models.Goods
 // @Failure 210 请求出错
 // @Failure 21001 商品不存在
-// @router / [put]
+// @router /:goods_id [put]
 func (this *GoodsController) UpdateGoods() {
 
 }
