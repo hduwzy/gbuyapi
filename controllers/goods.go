@@ -29,7 +29,7 @@ func (this *GoodsController) GetGoods() {
 
 // @Title AddGoods
 // @Description 添加新的商品
-// @Param	body	body	models.Goods	true	"商品信息"
+// @Param	body	body	params.AddGoodsParams	true	"商品信息"
 // @Success 200 {int} models.Goods.Id
 // @Failure 210 请求出错
 // @Failure 21002 商品信息不全
