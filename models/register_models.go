@@ -5,7 +5,7 @@ import "github.com/astaxie/beego/orm"
 func init() {
 	models := []interface{}{
 		// 商品
-		&Goods{},&Sku{},
+		&Goods{},&Sku{},&SkuImage{},
 		// 订单
 		&Orders{}, &SubOrders{},
 		// 团购

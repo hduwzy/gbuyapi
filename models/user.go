@@ -18,3 +18,8 @@ type UserAddress struct {
 func (this *UserAddress) TableName() string {
 	return "user_address"
 }
+
+
+type UserInfo struct {
+	UserId int
+}

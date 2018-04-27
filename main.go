@@ -14,5 +14,5 @@ func main() {
 	}
 
 	util.InitDb()
-	beego.Run()
+	beego.Run("0.0.0.0:8899")
 }

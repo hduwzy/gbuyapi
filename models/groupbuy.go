@@ -37,6 +37,7 @@ func (this *GroupbuyDetail) TableName() string {
 
 type GroupbuyPartake struct {
 	Id         int       `orm:"auto;pk;column(id)" json:"id"`
+	UserId     int       `orm:";column(user_id)" json:"user_id"`
 	GroupbuyId int       `orm:";column(groupbuy_id)" json:"groupbuy_id"`
 	CreateTime time.Time `orm:";auto_now_add;column(create_time);" json:"create_time"`
 }

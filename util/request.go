@@ -10,7 +10,7 @@ func ParamInt(ctx *context.Context, key string) int {
 	v_str := ctx.Input.Param(key)
 	v, err := strconv.Atoi(v_str)
 	if err != nil {
-		panic(NewError(-1, "参数解析错误:" + key))
+		panic(NewError(-1, "参数解析错误:"+key))
 	}
 	return v
 }
@@ -22,6 +22,6 @@ func ParamString(ctx *context.Context, key string) string {
 func ParamObject(ctx *context.Context, val interface{}) {
 	err := json.Unmarshal(ctx.Input.RequestBody, val)
 	if err != nil {
-		panic(NewError(-1, "参数解析错误:"+string(ctx.Input.RequestBody)))
+		panic(NewError(-1, "参数解析错误:"+err.Error()))
 	}
 }
