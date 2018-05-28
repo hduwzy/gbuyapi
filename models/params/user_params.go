@@ -2,7 +2,7 @@ package params
 
 
 type UserLoginRequest struct {
-	Code string
-	Nickname string
-	AvatUrl string
+	Code string `json:"code"`
+	Nickname string `json:"nick_name"`
+	AvatUrl string `json:"ava_url"`
 }
