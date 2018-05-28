@@ -11,7 +11,7 @@ func init() {
 		// 团购
 		&Groupbuy{}, &GroupbuyDetail{}, &GroupbuyPartake{},
 		// 用户
-		&UserAddress{},
+		&UserAddress{}, &Users{},
 	}
 	orm.RegisterModel(models...)
 }

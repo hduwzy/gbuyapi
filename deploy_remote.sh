@@ -13,4 +13,4 @@ fi
 #glide up
 nohup bee run -downdoc=true -gendoc=true >/dev/null 2>&1 &
 echo $! > .pid
-exit
+exitgo

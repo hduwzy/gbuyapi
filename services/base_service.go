@@ -14,6 +14,6 @@ func (s *BaseService) Orm() orm.Ormer {
 	return orm.NewOrm()
 }
 
-func (s *BaseService) GetUserInfo() models.UserInfo {
-	return models.UserInfo{UserId:2001}
+func (s *BaseService) GetUserInfo() models.Users {
+	return models.Users{Id:2001}
 }

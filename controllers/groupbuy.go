@@ -33,7 +33,7 @@ func (c *GroupbuyController) AddGroupbuy() {
 	}
 	now := time.Now()
 	gbuy := models.Groupbuy{
-		UserId:s.GetUserInfo().UserId,
+		UserId:s.GetUserInfo().Id,
 		Title:       param.Gbuy.Title,
 		ImgUrl:      param.Gbuy.ImgUrl,
 		Detail:      param.Gbuy.Detail,
@@ -73,7 +73,7 @@ func (c *GroupbuyController) DeleteGroupbuy() {
 	gid := util.ParamInt(c.Ctx, ":group_id")
 	s := services.GroupbuyService{}
 	s.Orm()
-	s.DeleteGroupbuy(s.GetUserInfo().UserId, gid)
+	s.DeleteGroupbuy(s.GetUserInfo().Id, gid)
 	c.Data["json"] = gid
 	c.ServeJSON()
 }
@@ -91,7 +91,7 @@ func (c *GroupbuyController) GetGroupbuyList() {
 
 	s := services.GroupbuyService{}
 	userInfo := s.GetUserInfo()
-	list := s.GetGroupbuyList(userInfo.UserId, page, page_size)
+	list := s.GetGroupbuyList(userInfo.Id, page, page_size)
 	c.Data["json"] = list
 	c.ServeJSON()
 }

@@ -20,6 +20,16 @@ func (this *UserAddress) TableName() string {
 }
 
 
-type UserInfo struct {
-	UserId int
+type Users struct {
+	Id int
+	OpenId string
+	Nickname string
+	AvaUrl string
+	AddTime time.Time
+	UpdateTime time.Time
+}
+
+
+func (this *Users) TableName() string {
+	return "users"
 }
