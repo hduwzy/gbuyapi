@@ -23,7 +23,7 @@ type UserController struct {
 func (this *UserController) Login() {
 	defer util.ErrHandle(this.Ctx)
 
-	if nil == services.Sess(this.Ctx) {
+	if nil != services.Sess(this.Ctx) {
 		panic(util.NewError(210, "用户已登录"))
 	}
 
