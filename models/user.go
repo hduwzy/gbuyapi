@@ -21,12 +21,12 @@ func (this *UserAddress) TableName() string {
 
 
 type Users struct {
-	Id int
-	OpenId string
-	Nickname string
-	AvaUrl string
-	AddTime time.Time
-	UpdateTime time.Time
+	Id int	`json:"id"`
+	OpenId string	`json:"open_id"`
+	Nickname string	`json:"nick_name"`
+	AvaUrl string	`json:"ava_url"`
+	AddTime time.Time	`json:"add_time"`
+	UpdateTime time.Time	`json:"update_time"`
 }
 
 

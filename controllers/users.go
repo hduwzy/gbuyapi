@@ -19,7 +19,7 @@ type UserController struct {
 // @Param	code	body	params.UserLoginRequest	true	"用户登录信息"
 // @Success 200 {string}	登录结果
 // @Failure 210 请求出错
-// @router /user/login/:code [get]
+// @router /login [post]
 func (this *UserController) Login() {
 	defer util.ErrHandle(this.Ctx)
 
@@ -45,7 +45,7 @@ func (this *UserController) Login() {
 // @Description 获取当前用户信息
 // @Success 200 {object} models.Users	"当前用户信息"
 // @Failure 210 请求出错
-// @router /:goods_id [get]
+// @router /info [get]
 func (this *UserController) GetUserinfo() {
 	defer util.ErrHandle(this.Ctx)
 
